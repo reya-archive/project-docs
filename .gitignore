@@ -1,0 +1,94 @@
+# ============================================================
+# project-docs .gitignore
+# SI 프로젝트 문서 워크스페이스 보안 설정
+# ============================================================
+
+# ---- 고객사 원본 바이너리 (NDA 위험) ----
+# 원본 파일은 사내 파일 서버에 보관, 이 레포에는 마크다운 변환본만
+*.pptx
+*.ppt
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.hwp
+*.hwpx
+*.pdf
+
+# 원본이 필요한 경우 _shared/ 또는 projects/*/docs/references/ 에
+# 명시적으로 !예외 추가해서 사용
+# 예: !_shared/glossary/official-terms.pdf
+
+# ---- 이미지 파일 (용량 큰 원본 차단, 변환본만 허용) ----
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.webp
+# README 등에 포함할 이미지는 assets/ 폴더에 넣고 명시적 예외 처리
+!**/assets/**/*.png
+!**/assets/**/*.jpg
+
+# ---- 시크릿 / 인증 정보 ----
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+*_secret*
+*_token*
+*_password*
+
+# ---- 개인 메모 / 임시 작업 ----
+scratch/
+draft/
+tmp/
+temp/
+_wip/
+_personal/
+*.scratch.md
+*_메모.md
+*_개인*.md
+
+# ---- OS / IDE 파일 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-*
+
+# ---- MS Office 임시 파일 ----
+~$*
+*.tmp
+*.bak
+*.~lock*
+
+# ---- 압축 파일 (원본 배포본 차단) ----
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+
+# ---- 로그 / 캐시 ----
+*.log
+*.cache
+.cache/
+
+# ---- Claude Code 로컬 설정 (팀 공유 불필요) ----
+.claude/settings.local.json
+.claude/todos/
+.claude/projects/
+
+# ---- 세션 핸드오프 예외 (PICKUP.md 는 허용) ----
+!PICKUP.md
